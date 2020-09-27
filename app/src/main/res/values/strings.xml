@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Lab1</string>
     <string name="text">Text</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="_5">5</string>
+    <string name="switch1">Switch</string>
+    <string name="imagebutton">ImageButton</string>
 </resources>
