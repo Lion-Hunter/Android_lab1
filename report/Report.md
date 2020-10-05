@@ -12,7 +12,6 @@
 
 ![alt text](task_1.png)
 
-##### Решение:
 *Код программы:*
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -52,11 +51,14 @@
 
 **Результат**
 
-![alt text](1_1_result.png)
 *Рис.1.2. Макет экрана в Android Studio*
+
+![alt text](1_1_result.png)
+
 *** 
 
 **Задание 1, второе решение**
+
 *Код программы:*
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -96,17 +98,18 @@
 </LinearLayout>
 ```
 
-**Результат**
 *Рис.1.3. Макет экрана в Android Studio*
+
 ![alt text](1_1_1_result.png)
 
 *** 
 
 **Задание 2**
+
 *Рисунок 1.4. Задание №2. Вариант №21*
+
 ![alt text](task_2.png)
 
-##### Решение:
 *Код программы:*
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -142,6 +145,6 @@
 </LinearLayout>
 ```
 
-**Результат**
 *Рис.1.5. Макет экрана в Android Studio*
+
 ![alt text](1_2_result.png)
