@@ -49,9 +49,9 @@
 ```
 
 **Результат**
-*Рис.1.2. Макет экрана в Android Studio*
-![alt text](1_1_result.png)
 
+![alt text](1_1_result.png)
+*Рис.1.2. Макет экрана в Android Studio*
 *** 
 
 **Задание 1, второе решение**
