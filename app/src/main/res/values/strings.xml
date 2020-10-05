@@ -7,4 +7,6 @@
     <string name="_5">5</string>
     <string name="switch1">Switch</string>
     <string name="imagebutton">ImageButton</string>
+    <string name="button">Button</string>
+    <string name="textview">TextView</string>
 </resources>
