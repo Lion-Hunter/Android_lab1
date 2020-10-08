@@ -1,11 +1,11 @@
 # Лабораторная работа №1. Layouts
-# Цели
+## Цели
   - Ознакомиться со средой разработки Android Studio
   - Изучить основные принципы верстки layout с использованием View и ViewGroup
   - Изучить основные возможности и свойства LinearLayout
   - Изучить основные возможности и свойства ConstraintLayout
-# Программа работы
-### Задача 1. LinearLayout
+## Программа работы
+#### Задача 1. LinearLayout
 LinearLayout это макет, который позволяет выравнивает все дочерние элементы в одном направлении, вертикально или горизонтально (направление задается с помощью атрибута orientation). Распололожение элементов друг за другом позволяет вместить не более 1 элемента в строку для вертикального лэйаута и не более 1 в столбец для горизонтального. 
 Атрибуты gravity и layout_gravity позволяют соответственно задать расположение содержимого внутри объекта или позиционирование самого объекта относительно макета.
 Атрибуты layout_height и layout_width позволяют задавать высотку и ширину элемента. Могут принимать фиксированные значения, или в зависимости от размеров их содержимого (wrap_content) или размеров лэйаута, которому они принадлежат (match_parent).
@@ -29,7 +29,8 @@ LinearLayout это макет, который позволяет выравни
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingBottom="150dp">
 
     <TextView
         android:id="@+id/textView2"
@@ -50,7 +51,6 @@ LinearLayout это макет, который позволяет выравни
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginBottom="150dp"
         android:layout_weight="1"
         android:text="@string/text" />
 
@@ -72,7 +72,6 @@ LinearLayout это макет, который позволяет выравни
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -159,7 +158,7 @@ LinearLayout это макет, который позволяет выравни
 
 ***
 
-### Задача 2. ConstraintLayout
+#### Задача 2. ConstraintLayout
 ConstraintLayout позволяет размещать вложенные в него элемента при помощи констрйентов — ограничений (привязок), задаваемых от одного элемента к другому или самому лэйауту. Не требует создания вложенных структур и удобен для работы в окне дизайна. С помощью атрибута layout_constraintDimensionRatio можно задать отношение сторон для constraintLayout.
 Атрибуты layout_height и layout_weight имеют схожее принцип работы, что и с линейным макетом, но match_parent заменяется на match_constraint, задающий зависимость от параметров констрейнтов, а не родительского макета.
 Атрибуты layout_constraintHorizontal_weight, layout_constraintVertical_weight являются альтернативой layou_weight и задают "вес" элемента по одной из осей (вертикальной или горизонтальной).
@@ -184,10 +183,9 @@ ConstraintLayout позволяет размещать вложенные в н�
         android:id="@+id/textView2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="193dp"
         android:text="@string/text"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/checkBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -196,24 +194,27 @@ ConstraintLayout позволяет размещать вложенные в н�
         android:id="@+id/checkBox"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="194dp"
-        android:layout_marginBottom="193dp"
-        app:layout_constraintBottom_toBottomOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
 
     <Button
         android:id="@+id/button"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="150dp"
         android:text="@string/text"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/space"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@id/checkBox" />
+
+    <Space
+        android:id="@+id/space"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
@@ -273,7 +274,7 @@ ConstraintLayout позволяет размещать вложенные в н�
 
 *** 
 
-### Задача 3. ConstraintLayout
+#### Задача 3. ConstraintLayout
 ##### Создайте layout ресурс для следующего макета экрана с использованием ConstraintLayout.
 *Рисунок 3.1. Задание. Вариант №12*
 
@@ -439,10 +440,10 @@ ConstraintLayout позволяет размещать вложенные в н�
 
 ***
 
-### Вывод
-В ходе выполнения лаюораторной работы:
+## Вывод
+В ходе выполнения лабораторной работы:
    - Проведено ознакомление со средой разработки Android Studio
-   - Рассмотрена верстка макетов с использованием View и ViewGroup
    - Изучены свойства и возможности Linearlayout и Constraintlayout, а так же их основные атрибуты и области применения.
+   - Реализовано 3 комбинации объектов на экране при помощи разных возможностей Linearlayout и Constraintlayout.
 
-Constraintlayout оказался более удобным в использовании и более гибким при размещении элементов на макете. Linearlayout применим к простым структурам, но на практике всегда может быть заменен constraintlayout.
+Constraintlayout оказался более удобным в использовании и более гибким при размещении элементов на макете, что в совокупности с отсутствием вложенных структур, замедляющих работу приложения, даёт данной структуре выигрыш перед Linearlayout, который применим к простым структурам, но на практике всегда может быть заменен Constraintlayout.
